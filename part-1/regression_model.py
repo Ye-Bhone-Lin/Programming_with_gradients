@@ -39,6 +39,12 @@ w_final, loss_history = gradient_descent(X_design, y_scaled, alpha=alpha, n_iter
 print("\n=== Results with alpha = 0.01 ===")
 print("Final weight vector:")
 print(w_final)
+
+step = 200
+for it in range(0, n_iters + 1, step):
+    idx = 0 if it == 0 else it - 1
+    print(f"Iteration {it:4d} : Loss = {loss_history[idx]:.6f}")
+
 print(f"Initial loss: {loss_history[0]:.6f}")
 print(f"Final loss: {loss_history[-1]:.6f}")
 

@@ -56,6 +56,11 @@ print(w)
 print(f"\nFinal training loss (BCE): {loss_history[-1]:.6f}")
 print(f"Initial training loss (BCE): {loss_history[0]:.6f}")
 
+step = 200
+for it in range(0, n_iterations+1, step):
+    idx = 0 if it == 0 else it - 1
+    print(f"Iteration {it:4d} : Loss = {loss_history[idx]:.6f}")
+
 plt.figure(figsize=(7,5))
 plt.plot(range(0, n_iterations+1), loss_history, color='#2563eb')
 plt.xlabel('Iteration')
